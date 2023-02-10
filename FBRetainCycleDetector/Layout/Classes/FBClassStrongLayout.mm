@@ -197,7 +197,7 @@ NSArray<id<FBObjectReference>> *FBGetObjectStrongReferences(id obj,
     
     if (!ivars) {
       ivars = FBGetStrongReferencesForClass(currentClass);
-      if (layoutCache && currentClass) {
+      if (layoutCache && currentClass && (ivars.count > 0)) {
         layoutCache[(id<NSCopying>)currentClass] = ivars;
       }
     }
